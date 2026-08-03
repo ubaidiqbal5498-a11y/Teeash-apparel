@@ -5604,3 +5604,179 @@ body.modal-open {
   .catalog-info h3 { font-size: 0.85rem; }
   .catalog-info .product-desc { display: none; }
 }
+
+/* ============================================================
+   Full-screen hero video + centered TEEASH logo header
+   ============================================================ */
+
+.site-header.header-brand-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  position: fixed;
+}
+
+.header-brand-center .logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1003;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.4vw, 2.05rem);
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.header-brand-center .nav-panel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-brand-center .nav-links-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-brand-center .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-left: auto;
+}
+
+.header-brand-center .nav-links-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Over full-bleed video: keep brand prominent */
+.header-brand-center:not(.is-scrolled) {
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.header-brand-center:not(.is-scrolled) .logo {
+  color: #fff !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+.header-brand-center:not(.is-scrolled) .nav-links a {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.header-brand-center:not(.is-scrolled) .nav-links a:hover,
+.header-brand-center:not(.is-scrolled) .nav-links a.active {
+  color: #fff !important;
+}
+
+.header-brand-center:not(.is-scrolled) .nav-icon-btn {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+}
+
+.header-brand-center:not(.is-scrolled) .nav-cta {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #111827 !important;
+}
+
+.header-brand-center:not(.is-scrolled) .nav-toggle-bar {
+  background: #fff !important;
+}
+
+/* Full-viewport cinematic hero video */
+.hero.hero-video-full {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
+  max-height: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+.hero-video-full .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-video-full .hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  opacity: 1 !important;
+}
+
+.hero-video-full .hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+@media (max-width: 900px) {
+  .header-brand-center .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header-brand-center .nav-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .header-brand-center .nav-links-left,
+  .header-brand-center .nav-links-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .header-brand-center .nav-right {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .header-brand-center.is-menu-open .logo {
+    color: var(--color-text) !important;
+    text-shadow: none !important;
+  }
+}
+

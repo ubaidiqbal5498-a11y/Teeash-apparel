@@ -22,9 +22,7 @@
   <a class="skip-link" href="#page-home">Skip to content</a>
 
   <!-- Top navigation bar -->
-  <header class="site-header" id="site-header">
-    <a href="#home" class="logo" data-nav data-page="home">Teeash</a>
-
+  <header class="site-header header-brand-center" id="site-header">
     <button
       class="nav-toggle"
       id="nav-toggle"
@@ -38,33 +36,40 @@
       <span class="nav-toggle-bar"></span>
     </button>
 
+    <a href="#home" class="logo" data-nav data-page="home">TEEASH</a>
+
     <nav class="nav-panel" id="nav-panel" aria-label="Main navigation">
-      <ul class="nav-links">
+      <ul class="nav-links nav-links-left">
         <li><a href="#home" class="nav-link active" data-nav data-page="home">Home</a></li>
         <li><a href="#categories" class="nav-link" data-nav data-page="categories">Categories</a></li>
-        <li><a href="#collections" class="nav-link" data-nav data-page="collections">Collections</a></li>
-        <li><a href="#about" class="nav-link" data-nav data-page="about">About</a></li>
       </ul>
 
-      <div class="nav-tools">
-        <button type="button" class="nav-icon-btn" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="site-search">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-            <circle cx="11" cy="11" r="7"></circle>
-            <path d="M20 20l-3.5-3.5"></path>
-          </svg>
-        </button>
+      <div class="nav-right">
+        <ul class="nav-links nav-links-right">
+          <li><a href="#collections" class="nav-link" data-nav data-page="collections">Collections</a></li>
+          <li><a href="#about" class="nav-link" data-nav data-page="about">About</a></li>
+        </ul>
 
-        <button type="button" class="nav-icon-btn cart-toggle" id="cart-toggle" aria-label="Open shopping cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-            <path d="M6 7h15l-1.5 9h-12z"></path>
-            <path d="M6 7L5 3H2"></path>
-            <circle cx="9" cy="20" r="1.4"></circle>
-            <circle cx="17" cy="20" r="1.4"></circle>
-          </svg>
-          <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
-        </button>
+        <div class="nav-tools">
+          <button type="button" class="nav-icon-btn" id="search-toggle" aria-label="Search products" aria-expanded="false" aria-controls="site-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-3.5-3.5"></path>
+            </svg>
+          </button>
 
-        <a href="#collections" class="nav-cta" data-nav data-page="collections">Shop Now</a>
+          <button type="button" class="nav-icon-btn cart-toggle" id="cart-toggle" aria-label="Open shopping cart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M6 7h15l-1.5 9h-12z"></path>
+              <path d="M6 7L5 3H2"></path>
+              <circle cx="9" cy="20" r="1.4"></circle>
+              <circle cx="17" cy="20" r="1.4"></circle>
+            </svg>
+            <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+          </button>
+
+          <a href="#collections" class="nav-cta" data-nav data-page="collections">Shop Now</a>
+        </div>
       </div>
     </nav>
 
@@ -79,68 +84,21 @@
   <main>
 <div class="page is-active" id="page-home" data-page-panel="home">
 
-    <section class="hero hero-cinematic" id="home" aria-label="Teeash Apparel hero">
-      <div class="hero-ambient" aria-hidden="true">
-        <span class="hero-orb hero-orb-a"></span>
-        <span class="hero-orb hero-orb-b"></span>
-        <span class="hero-grain"></span>
+    <section class="hero hero-video-full" id="home" aria-label="Teeash Apparel hero video">
+      <div class="hero-bg" id="hero-bg">
+        <video
+          class="hero-video"
+          muted
+          loop
+          autoplay
+          playsinline
+          preload="auto"
+          poster="assets/hero/male-streetwear.jpg"
+        >
+          <source src="assets/hero/male-streetwear.mp4" type="video/mp4">
+        </video>
       </div>
-
-      <div class="hero-stage">
-        <div class="hero-copy">
-          <p class="hero-welcome reveal-line"><span>Teeash Apparel</span></p>
-          <p class="hero-subtitle reveal-line"><span>Premium Men's Fashion</span></p>
-          <h1 class="hero-heading">
-            <span class="reveal-line"><span>Wear Confidence.</span></span>
-            <span class="reveal-line"><span>Wear Teeash.</span></span>
-          </h1>
-          <p class="hero-description reveal-line">
-            <span>Luxury essentials and modern streetwear — crafted for the man who values comfort, quality, and everyday presence.</span>
-          </p>
-          <div class="hero-actions reveal-line">
-            <span>
-              <a href="#collections" class="btn btn-primary btn-hero" data-nav data-page="collections">Shop Collection</a>
-              <a href="#about" class="btn btn-secondary btn-hero" data-nav data-page="about">Our Story</a>
-            </span>
-          </div>
-          <div class="hero-meta reveal-line" aria-hidden="true">
-            <span>Est. Modern Essentials</span>
-            <span class="hero-meta-dot"></span>
-            <span>Karachi · Worldwide</span>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-frame">
-            <div class="hero-bg" id="hero-bg">
-              <img
-                class="hero-base-image"
-                src="assets/hero/male-streetwear.jpg"
-                alt="Stylish male model in premium Teeash streetwear"
-                width="1800"
-                height="1200"
-                decoding="async"
-                fetchpriority="high"
-              >
-              <video
-                class="hero-video"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                poster="assets/hero/male-tee.jpg"
-              >
-                <source src="assets/hero/male-streetwear.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="hero-overlay" aria-hidden="true"></div>
-            <div class="hero-float-card" aria-hidden="true">
-              <p>New Season</p>
-              <strong>Oversized Essentials</strong>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
     </section>
 
     <!-- Signature interactive T-shirt showcase -->
