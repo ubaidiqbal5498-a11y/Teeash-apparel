@@ -19,11 +19,11 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#home">Skip to content</a>
+  <a class="skip-link" href="#page-home">Skip to content</a>
 
   <!-- Top navigation bar -->
   <header class="site-header" id="site-header">
-    <a href="#home" class="logo">Teeash</a>
+    <a href="#home" class="logo" data-nav data-page="home">Teeash</a>
 
     <button
       class="nav-toggle"
@@ -40,12 +40,10 @@
 
     <nav class="nav-panel" id="nav-panel" aria-label="Main navigation">
       <ul class="nav-links">
-        <li><a href="#home" class="nav-link active" data-nav>Home</a></li>
-        <li><a href="#categories" class="nav-link" data-nav>Categories</a></li>
-        <li><a href="#streetwear-collection" class="nav-link" data-nav>Collections</a></li>
-        <li><a href="#new-arrivals" class="nav-link" data-nav>New Arrivals</a></li>
-        <li><a href="#bestsellers" class="nav-link" data-nav>Best Sellers</a></li>
-        <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
+        <li><a href="#home" class="nav-link active" data-nav data-page="home">Home</a></li>
+        <li><a href="#categories" class="nav-link" data-nav data-page="categories">Categories</a></li>
+        <li><a href="#collections" class="nav-link" data-nav data-page="collections">Collections</a></li>
+        <li><a href="#about" class="nav-link" data-nav data-page="about">About</a></li>
       </ul>
 
       <div class="nav-tools">
@@ -56,7 +54,7 @@
           </svg>
         </button>
 
-        <a href="#checkout" class="nav-icon-btn cart-toggle" id="cart-toggle" aria-label="Go to checkout">
+        <button type="button" class="nav-icon-btn cart-toggle" id="cart-toggle" aria-label="Open shopping cart">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <path d="M6 7h15l-1.5 9h-12z"></path>
             <path d="M6 7L5 3H2"></path>
@@ -64,9 +62,9 @@
             <circle cx="17" cy="20" r="1.4"></circle>
           </svg>
           <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
-        </a>
+        </button>
 
-        <a href="#premium-collection-title" class="nav-cta">Shop Now</a>
+        <a href="#collections" class="nav-cta" data-nav data-page="collections">Shop Now</a>
       </div>
     </nav>
 
@@ -79,68 +77,182 @@
 
   <!-- Page content -->
   <main>
+<div class="page is-active" id="page-home" data-page-panel="home">
 
-    <!-- ============================================================
-         HERO — Premium men's streetwear
-         To swap brand media later, replace ONLY these files:
-           assets/hero/male-streetwear.jpg  (always-visible image)
-           assets/hero/male-tee.jpg         (video poster)
-           assets/hero/male-streetwear.mp4  (optional looping video)
-         Keep .hero-bg / .hero-base-image / .hero-video class names.
-         ============================================================ -->
-    <section class="hero" id="home" aria-label="Teeash Apparel hero">
-
-      <!-- Background media layer (image first, video optional) -->
-      <div class="hero-bg" id="hero-bg">
-        <!-- Always-visible cinematic male streetwear image -->
-        <img
-          class="hero-base-image"
-          src="assets/hero/male-streetwear.jpg"
-          alt="Stylish male model in premium Teeash streetwear"
-          width="1800"
-          height="1200"
-          decoding="async"
-          fetchpriority="high"
-        >
-
-        <!-- Optional looping male T-shirt clip (fades in when ready) -->
-        <video
-          class="hero-video"
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="assets/hero/male-tee.jpg"
-        >
-          <source src="assets/hero/male-streetwear.mp4" type="video/mp4">
-        </video>
+    <section class="hero hero-cinematic" id="home" aria-label="Teeash Apparel hero">
+      <div class="hero-ambient" aria-hidden="true">
+        <span class="hero-orb hero-orb-a"></span>
+        <span class="hero-orb hero-orb-b"></span>
+        <span class="hero-grain"></span>
       </div>
 
-      <!-- Subtle dark overlay (~45%) for text readability -->
-      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-stage">
+        <div class="hero-copy">
+          <p class="hero-welcome reveal-line"><span>Teeash Apparel</span></p>
+          <p class="hero-subtitle reveal-line"><span>Premium Men's Fashion</span></p>
+          <h1 class="hero-heading">
+            <span class="reveal-line"><span>Wear Confidence.</span></span>
+            <span class="reveal-line"><span>Wear Teeash.</span></span>
+          </h1>
+          <p class="hero-description reveal-line">
+            <span>Luxury essentials and modern streetwear — crafted for the man who values comfort, quality, and everyday presence.</span>
+          </p>
+          <div class="hero-actions reveal-line">
+            <span>
+              <a href="#collections" class="btn btn-primary btn-hero" data-nav data-page="collections">Shop Collection</a>
+              <a href="#about" class="btn btn-secondary btn-hero" data-nav data-page="about">Our Story</a>
+            </span>
+          </div>
+          <div class="hero-meta reveal-line" aria-hidden="true">
+            <span>Est. Modern Essentials</span>
+            <span class="hero-meta-dot"></span>
+            <span>Karachi · Worldwide</span>
+          </div>
+        </div>
 
-      <!-- Hero text content and call-to-action buttons -->
-      <div class="hero-content">
-        <p class="hero-welcome">Teeash Apparel</p>
-        <p class="hero-subtitle">Premium Men's Fashion</p>
-        <h1 class="hero-heading">Wear Confidence. Wear Teeash.</h1>
-        <p class="hero-description">
-          Luxury essentials and modern streetwear — crafted for the man who
-          values comfort, quality, and everyday style.
-        </p>
-        <div class="hero-actions">
-          <a href="#streetwear-collection" class="btn btn-primary">Shop Collection</a>
-          <a href="#new-arrivals" class="btn btn-secondary">New Arrivals</a>
+        <div class="hero-visual">
+          <div class="hero-frame">
+            <div class="hero-bg" id="hero-bg">
+              <img
+                class="hero-base-image"
+                src="assets/hero/male-streetwear.jpg"
+                alt="Stylish male model in premium Teeash streetwear"
+                width="1800"
+                height="1200"
+                decoding="async"
+                fetchpriority="high"
+              >
+              <video
+                class="hero-video"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="assets/hero/male-tee.jpg"
+              >
+                <source src="assets/hero/male-streetwear.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-float-card" aria-hidden="true">
+              <p>New Season</p>
+              <strong>Oversized Essentials</strong>
+            </div>
+          </div>
         </div>
       </div>
-
-      <a href="#categories" class="scroll-indicator" aria-label="Scroll to categories">
-        <span>Scroll</span>
-        <span class="scroll-indicator-arrow" aria-hidden="true"></span>
-      </a>
-
     </section>
 
+    <!-- Signature interactive T-shirt showcase -->
+    <section class="tee-lab reveal" id="tee-lab" aria-labelledby="tee-lab-title">
+      <div class="tee-lab-inner">
+        <div class="tee-lab-copy">
+          <p class="section-eyebrow">Signature Experience</p>
+          <h2 id="tee-lab-title">Build your everyday tee.</h2>
+          <p>Preview fit energy, fabric mood, and color in real time — a custom Teeash styling moment before you shop.</p>
+          <div class="tee-lab-controls">
+            <div class="tee-lab-group">
+              <p class="tee-lab-label">Style</p>
+              <div class="tee-lab-pills" role="group" aria-label="Tee style">
+                <button type="button" class="tee-pill is-active" data-style="oversized">Oversized</button>
+                <button type="button" class="tee-pill" data-style="classic">Classic</button>
+                <button type="button" class="tee-pill" data-style="boxy">Boxy</button>
+              </div>
+            </div>
+            <div class="tee-lab-group">
+              <p class="tee-lab-label">Color</p>
+              <div class="tee-lab-swatches" role="group" aria-label="Tee color">
+                <button type="button" class="tee-swatch is-active" data-color="#111827" data-name="Black" aria-label="Black" style="--swatch:#111827"></button>
+                <button type="button" class="tee-swatch" data-color="#F5F5F5" data-name="Ivory" aria-label="Ivory" style="--swatch:#F5F5F5"></button>
+                <button type="button" class="tee-swatch" data-color="#1E3A5F" data-name="Navy" aria-label="Navy" style="--swatch:#1E3A5F"></button>
+                <button type="button" class="tee-swatch" data-color="#556B2F" data-name="Olive" aria-label="Olive" style="--swatch:#556B2F"></button>
+                <button type="button" class="tee-swatch" data-color="#7F1D1D" data-name="Maroon" aria-label="Maroon" style="--swatch:#7F1D1D"></button>
+              </div>
+            </div>
+            <p class="tee-lab-rec" id="tee-lab-rec">Recommended: Oversized in Black — strong street silhouette.</p>
+            <a href="#collections" class="btn btn-primary" data-nav data-page="collections">Shop This Look</a>
+          </div>
+        </div>
+        <div class="tee-lab-stage" aria-hidden="true">
+          <div class="tee-canvas">
+            <div class="tee-shirt" id="tee-shirt">
+              <div class="tee-body"></div>
+              <div class="tee-sleeve tee-sleeve-l"></div>
+              <div class="tee-sleeve tee-sleeve-r"></div>
+              <div class="tee-neck"></div>
+              <div class="tee-mark">T</div>
+            </div>
+            <div class="tee-shadow"></div>
+          </div>
+          <p class="tee-lab-caption"><span id="tee-lab-style">Oversized</span> · <span id="tee-lab-color">Black</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Single premium trust strip -->
+    <section class="trust-strip reveal" aria-label="Teeash promises">
+      <div class="trust-strip-inner">
+        <article class="trust-strip-item">
+          <span class="trust-strip-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+          </span>
+          <div>
+            <h3>Premium Fabric</h3>
+            <p>Soft cotton blends with lasting handfeel</p>
+          </div>
+        </article>
+        <article class="trust-strip-item">
+          <span class="trust-strip-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h13l5 5v5h-2a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3V7z"/><path d="M16 7v5h5"/></svg>
+          </span>
+          <div>
+            <h3>Fast Delivery</h3>
+            <p>Ships within 24 hours, tracked</p>
+          </div>
+        </article>
+        <article class="trust-strip-item">
+          <span class="trust-strip-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          </span>
+          <div>
+            <h3>Quality Checked</h3>
+            <p>Every piece inspected before packing</p>
+          </div>
+        </article>
+        <article class="trust-strip-item">
+          <span class="trust-strip-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>
+          </span>
+          <div>
+            <h3>Easy Returns</h3>
+            <p>14-day exchanges, no stress</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-editorial reveal" aria-labelledby="home-editorial-title">
+      <div class="home-editorial-inner">
+        <div class="home-editorial-media">
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&h=1200&q=80" alt="Teeash oversized essential tee" loading="lazy">
+        </div>
+        <div class="home-editorial-copy">
+          <p class="section-eyebrow">Editorial Drop</p>
+          <h2 id="home-editorial-title">Clothes that earn their place in your rotation.</h2>
+          <p>From heavyweight crews to clean oversized silhouettes, Teeash is built for presence — not noise. Explore the full catalog when you’re ready.</p>
+          <div class="home-editorial-stats" aria-label="Brand stats">
+            <div><strong>12k+</strong><span>Happy clients</span></div>
+            <div><strong>4.9</strong><span>Average rating</span></div>
+            <div><strong>48h</strong><span>Avg. dispatch</span></div>
+          </div>
+          <a href="#collections" class="btn btn-primary" data-nav data-page="collections">Enter Collections</a>
+        </div>
+      </div>
+    </section>
+
+    </div><!-- /page-home -->
+
+    <div class="page" id="page-categories" data-page-panel="categories" hidden>
     <!-- Shop by Category -->
     <section class="categories reveal" id="categories" aria-labelledby="categories-title">
       <div class="categories-inner">
@@ -151,25 +263,25 @@
         </div>
         <ul class="categories-grid">
           <li>
-            <a class="category-card" href="#streetwear-collection">
+            <a class="category-card" href="#collections" data-nav data-page="collections">
               <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=800&h=1000&q=80" alt="T-Shirts category" loading="lazy">
               <span class="category-label">T-Shirts</span>
             </a>
           </li>
           <li>
-            <a class="category-card" href="#bestsellers">
+            <a class="category-card" href="#collections" data-nav data-page="collections">
               <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&h=1000&q=80" alt="Hoodies category" loading="lazy">
               <span class="category-label">Hoodies</span>
             </a>
           </li>
           <li>
-            <a class="category-card" href="#new-arrivals">
+            <a class="category-card" href="#collections" data-nav data-page="collections">
               <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&h=1000&q=80" alt="Polos category" loading="lazy">
               <span class="category-label">Polos</span>
             </a>
           </li>
           <li>
-            <a class="category-card" href="#premium-collection-title">
+            <a class="category-card" href="#collections" data-nav data-page="collections">
               <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&h=1000&q=80" alt="Denim category" loading="lazy">
               <span class="category-label">Denim</span>
             </a>
@@ -177,9 +289,11 @@
         </ul>
       </div>
     </section>
+    </div><!-- /page-categories -->
 
+    <div class="page" id="page-collections" data-page-panel="collections" hidden>
     <!-- Featured Collection below Hero (Step 12) -->
-    <section class="streetwear-collection reveal" id="streetwear-collection" aria-labelledby="streetwear-collection-title">
+    <section class="streetwear-collection streetwear-mosaic reveal" id="streetwear-collection" aria-labelledby="streetwear-collection-title">
       <div class="streetwear-collection-inner">
 
         <!-- Section title and subtitle -->
@@ -195,7 +309,7 @@
         <ul class="streetwear-grid">
 
           <!-- Product 1 -->
-          <li class="streetwear-card">
+          <li class="streetwear-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="product-label product-label-new">New Arrival</span>
             <div class="streetwear-image-wrap">
               <img
@@ -208,15 +322,12 @@
               <h3>Midnight Oversized Tee</h3>
               <p class="streetwear-desc">Heavyweight cotton with a relaxed drop-shoulder fit.</p>
               <p class="streetwear-price">$38.00</p>
-              <div class="streetwear-actions">
-                <button type="button" class="btn btn-outline js-view-details">View Details</button>
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 2 -->
-          <li class="streetwear-card">
+          <li class="streetwear-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="product-label product-label-best">Best Seller</span>
             <div class="streetwear-image-wrap">
               <img
@@ -229,15 +340,12 @@
               <h3>Stone Wash Hoodie</h3>
               <p class="streetwear-desc">Soft fleece hoodie designed for all-day comfort.</p>
               <p class="streetwear-price">$62.00</p>
-              <div class="streetwear-actions">
-                <button type="button" class="btn btn-outline js-view-details">View Details</button>
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 3 -->
-          <li class="streetwear-card">
+          <li class="streetwear-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="product-label product-label-new">New Arrival</span>
             <div class="streetwear-image-wrap">
               <img
@@ -250,15 +358,12 @@
               <h3>Heritage Polo</h3>
               <p class="streetwear-desc">Clean collar lines with a breathable premium knit.</p>
               <p class="streetwear-price">$44.00</p>
-              <div class="streetwear-actions">
-                <button type="button" class="btn btn-outline js-view-details">View Details</button>
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 4 -->
-          <li class="streetwear-card">
+          <li class="streetwear-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="product-label product-label-best">Best Seller</span>
             <div class="streetwear-image-wrap">
               <img
@@ -271,15 +376,12 @@
               <h3>Urban Straight Jeans</h3>
               <p class="streetwear-desc">Durable denim with a modern straight silhouette.</p>
               <p class="streetwear-price">$68.00</p>
-              <div class="streetwear-actions">
-                <button type="button" class="btn btn-outline js-view-details">View Details</button>
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 5 -->
-          <li class="streetwear-card">
+          <li class="streetwear-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="product-label product-label-new">New Arrival</span>
             <div class="streetwear-image-wrap">
               <img
@@ -292,15 +394,12 @@
               <h3>Metro Tracksuit</h3>
               <p class="streetwear-desc">Two-piece set with a refined athletic finish.</p>
               <p class="streetwear-price">$92.00</p>
-              <div class="streetwear-actions">
-                <button type="button" class="btn btn-outline js-view-details">View Details</button>
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 6 -->
-          <li class="streetwear-card">
+          <li class="streetwear-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="product-label product-label-best">Best Seller</span>
             <div class="streetwear-image-wrap">
               <img
@@ -313,11 +412,8 @@
               <h3>Utility Cargo Pants</h3>
               <p class="streetwear-desc">Functional pockets with a relaxed tapered cut.</p>
               <p class="streetwear-price">$56.00</p>
-              <div class="streetwear-actions">
-                <button type="button" class="btn btn-outline js-view-details">View Details</button>
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-              </div>
             </div>
+</div>
           </li>
 
         </ul>
@@ -326,7 +422,7 @@
     </section>
 
     <!-- Best Sellers (Step 13) -->
-    <section class="bestsellers reveal" id="bestsellers" aria-labelledby="bestsellers-title">
+    <section class="bestsellers bestsellers-asymmetric reveal" id="bestsellers" aria-labelledby="bestsellers-title">
       <div class="bestsellers-inner">
 
         <div class="bestsellers-header">
@@ -338,7 +434,7 @@
         <ul class="bestsellers-grid">
 
           <!-- Product 1 -->
-          <li class="bestseller-card">
+          <li class="bestseller-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="bs-badge bs-badge-seller">Best Seller</span>
             <span class="bs-discount">-20%</span>
             <div class="bs-image-wrap">
@@ -367,15 +463,12 @@
                 <button type="button" class="bs-swatch" style="--swatch:#556B2F" title="Olive" aria-label="Olive"></button>
                 <button type="button" class="bs-swatch" style="--swatch:#1B2A4A" title="Navy" aria-label="Navy"></button>
               </div>
-              <div class="bs-actions">
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-                <button type="button" class="btn btn-outline js-view-details">Quick View</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 2 -->
-          <li class="bestseller-card">
+          <li class="bestseller-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="bs-badge bs-badge-new">New Arrival</span>
             <span class="bs-discount">-15%</span>
             <div class="bs-image-wrap">
@@ -404,15 +497,12 @@
                 <button type="button" class="bs-swatch" style="--swatch:#556B2F" title="Olive" aria-label="Olive"></button>
                 <button type="button" class="bs-swatch" style="--swatch:#1B2A4A" title="Navy" aria-label="Navy"></button>
               </div>
-              <div class="bs-actions">
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-                <button type="button" class="btn btn-outline js-view-details">Quick View</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 3 -->
-          <li class="bestseller-card">
+          <li class="bestseller-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="bs-badge bs-badge-seller">Best Seller</span>
             <span class="bs-discount">-25%</span>
             <div class="bs-image-wrap">
@@ -441,15 +531,12 @@
                 <button type="button" class="bs-swatch is-active" style="--swatch:#556B2F" title="Olive" aria-label="Olive"></button>
                 <button type="button" class="bs-swatch" style="--swatch:#1B2A4A" title="Navy" aria-label="Navy"></button>
               </div>
-              <div class="bs-actions">
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-                <button type="button" class="btn btn-outline js-view-details">Quick View</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 4 -->
-          <li class="bestseller-card">
+          <li class="bestseller-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="bs-badge bs-badge-limited">Limited Edition</span>
             <span class="bs-discount">-18%</span>
             <div class="bs-image-wrap">
@@ -478,15 +565,12 @@
                 <button type="button" class="bs-swatch" style="--swatch:#556B2F" title="Olive" aria-label="Olive"></button>
                 <button type="button" class="bs-swatch is-active" style="--swatch:#1B2A4A" title="Navy" aria-label="Navy"></button>
               </div>
-              <div class="bs-actions">
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-                <button type="button" class="btn btn-outline js-view-details">Quick View</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 5 -->
-          <li class="bestseller-card">
+          <li class="bestseller-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="bs-discount">-12%</span>
             <div class="bs-image-wrap">
               <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&h=1000&q=80" alt="Charcoal Slim Fit Tee" loading="lazy">
@@ -514,15 +598,12 @@
                 <button type="button" class="bs-swatch" style="--swatch:#556B2F" title="Olive" aria-label="Olive"></button>
                 <button type="button" class="bs-swatch" style="--swatch:#1B2A4A" title="Navy" aria-label="Navy"></button>
               </div>
-              <div class="bs-actions">
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-                <button type="button" class="btn btn-outline js-view-details">Quick View</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 6 -->
-          <li class="bestseller-card">
+          <li class="bestseller-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="bs-badge bs-badge-new">New Arrival</span>
             <span class="bs-discount">-22%</span>
             <div class="bs-image-wrap">
@@ -551,15 +632,12 @@
                 <button type="button" class="bs-swatch" style="--swatch:#556B2F" title="Olive" aria-label="Olive"></button>
                 <button type="button" class="bs-swatch" style="--swatch:#1B2A4A" title="Navy" aria-label="Navy"></button>
               </div>
-              <div class="bs-actions">
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-                <button type="button" class="btn btn-outline js-view-details">Quick View</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 7 -->
-          <li class="bestseller-card">
+          <li class="bestseller-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="bs-discount">-10%</span>
             <div class="bs-image-wrap">
               <img src="https://images.unsplash.com/photo-1516442443906-71605254b628?auto=format&fit=crop&w=800&h=1000&q=80" alt="Forest Relaxed Tee" loading="lazy">
@@ -587,15 +665,12 @@
                 <button type="button" class="bs-swatch is-active" style="--swatch:#556B2F" title="Olive" aria-label="Olive"></button>
                 <button type="button" class="bs-swatch" style="--swatch:#1B2A4A" title="Navy" aria-label="Navy"></button>
               </div>
-              <div class="bs-actions">
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-                <button type="button" class="btn btn-outline js-view-details">Quick View</button>
-              </div>
             </div>
+</div>
           </li>
 
           <!-- Product 8 -->
-          <li class="bestseller-card">
+          <li class="bestseller-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="bs-badge bs-badge-limited">Limited Edition</span>
             <span class="bs-discount">-30%</span>
             <div class="bs-image-wrap">
@@ -624,11 +699,8 @@
                 <button type="button" class="bs-swatch" style="--swatch:#556B2F" title="Olive" aria-label="Olive"></button>
                 <button type="button" class="bs-swatch" style="--swatch:#1B2A4A" title="Navy" aria-label="Navy"></button>
               </div>
-              <div class="bs-actions">
-                <button type="button" class="btn btn-soft js-add-to-cart">Add to Cart</button>
-                <button type="button" class="btn btn-outline js-view-details">Quick View</button>
-              </div>
             </div>
+</div>
           </li>
 
         </ul>
@@ -636,7 +708,7 @@
     </section>
 
     <!-- Featured Collection (Step 4) -->
-    <section class="featured reveal" aria-labelledby="featured-title">
+    <section class="featured featured-editorial reveal" aria-labelledby="featured-title">
       <div class="featured-inner">
 
         <!-- Section title and subtitle -->
@@ -652,7 +724,7 @@
         <ul class="product-grid">
 
           <!-- Product 1 -->
-          <li class="product-card">
+          <li class="product-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&h=1000&q=80" alt="Classic Crew Tee" loading="lazy">
             </div>
@@ -660,12 +732,11 @@
               <h3>Classic Crew Tee</h3>
               <p class="product-desc">Soft cotton essential with a clean, timeless fit.</p>
               <p class="product-price">$29.00</p>
-              <a href="#" class="btn btn-primary">View Product</a>
-            </div>
+</div>
           </li>
 
           <!-- Product 2 -->
-          <li class="product-card">
+          <li class="product-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&h=1000&q=80" alt="Urban Oversized Tee" loading="lazy">
             </div>
@@ -673,12 +744,11 @@
               <h3>Urban Oversized Tee</h3>
               <p class="product-desc">Relaxed silhouette designed for modern street style.</p>
               <p class="product-price">$34.00</p>
-              <a href="#" class="btn btn-primary">View Product</a>
-            </div>
+</div>
           </li>
 
           <!-- Product 3 -->
-          <li class="product-card">
+          <li class="product-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1618354691438-25bc04584c23?auto=format&fit=crop&w=800&h=1000&q=80" alt="Premium Heavyweight Tee" loading="lazy">
             </div>
@@ -686,12 +756,11 @@
               <h3>Premium Heavyweight Tee</h3>
               <p class="product-desc">Durable fabric with a structured, elevated feel.</p>
               <p class="product-price">$39.00</p>
-              <a href="#" class="btn btn-primary">View Product</a>
-            </div>
+</div>
           </li>
 
           <!-- Product 4 -->
-          <li class="product-card">
+          <li class="product-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=800&h=1000&q=80" alt="Minimal Logo Tee" loading="lazy">
             </div>
@@ -699,8 +768,7 @@
               <h3>Minimal Logo Tee</h3>
               <p class="product-desc">Subtle branding for a refined everyday look.</p>
               <p class="product-price">$32.00</p>
-              <a href="#" class="btn btn-primary">View Product</a>
-            </div>
+</div>
           </li>
 
         </ul>
@@ -708,130 +776,15 @@
       </div>
     </section>
 
-    <!-- About Teeash Apparel (Step 5) -->
-    <section class="about reveal" aria-labelledby="about-title">
-      <div class="about-inner">
 
-        <!-- Left: brand story and Learn More button -->
-        <div class="about-content">
-          <h2 id="about-title">About Teeash Apparel</h2>
-          <p>
-            Teeash Apparel was founded for the modern man: everyday essentials
-            should feel as considered as statement pieces. We design premium
-            T-shirts and streetwear with careful attention to fabric, fit, and
-            finish — so you can move through your day with comfort and confidence.
-          </p>
-          <p>
-            From classic crew necks to oversized silhouettes, every piece is made
-            to last and styled to feel effortless. We believe men's fashion is not
-            about chasing trends, but about building a wardrobe that reflects who
-            you are.
-          </p>
-          <a href="#" class="btn btn-primary">Learn More</a>
+    <section class="craft-band reveal" id="our-story" aria-labelledby="our-story-title">
+      <div class="craft-band-inner">
+        <div class="craft-band-copy">
+          <p class="section-eyebrow">Craft</p>
+          <h2 id="our-story-title">Numbers that back the brand.</h2>
+          <p>Trusted by men who want elevated essentials — not disposable fashion.</p>
+          <a href="#about" class="btn btn-outline" data-nav data-page="about">Read Our Story</a>
         </div>
-
-        <!-- Right: placeholder for brand or store image -->
-        <div class="about-media" aria-label="Brand image placeholder">
-          Brand / Store Image Placeholder
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Our Story / Brand Trust (Step 14) -->
-    <section class="brand-story reveal" id="our-story" aria-labelledby="our-story-title">
-      <div class="brand-story-inner">
-
-        <!-- Section header -->
-        <div class="brand-story-header">
-          <p class="section-eyebrow">Why Teeash</p>
-          <h2 id="our-story-title">Brand Promise</h2>
-          <p>Quality fabric. Premium printing. Fast delivery you can trust.</p>
-        </div>
-
-        <!-- Two-column: image + story -->
-        <div class="brand-story-layout">
-          <div class="brand-story-media">
-            <img
-              src="https://images.unsplash.com/photo-1558171813-4c088753af8f?auto=format&fit=crop&w=1200&q=80"
-              alt="Premium men's T-shirts in a modern streetwear studio"
-              width="1200"
-              height="900"
-              loading="lazy"
-            >
-          </div>
-
-          <div class="brand-story-copy">
-            <p class="brand-story-eyebrow">About Teeash</p>
-            <h3>Premium quality. Modern streetwear. Everyday confidence.</h3>
-            <p>
-              Teeash Apparel was built on a passion for elevated essentials —
-              premium T-shirts and streetwear that feel as considered as they look.
-              Inspired by modern urban style, every piece is designed for men who
-              want comfort without compromising presence.
-            </p>
-            <p>
-              We obsess over fabric handfeel, durable construction, and fits that
-              move with real life. From heavyweight tees to refined oversized
-              silhouettes, our craftsmanship is guided by one standard: lasting
-              quality you can trust every day.
-            </p>
-            <p>
-              Our vision is simple — become a trusted premium men's fashion brand
-              known for clean design, honest materials, and clothing that earns
-              its place in your rotation.
-            </p>
-            <a href="#bestsellers" class="btn btn-primary">Shop Best Sellers</a>
-          </div>
-        </div>
-
-        <!-- Feature highlights -->
-        <ul class="brand-features">
-          <li class="brand-feature-card">
-            <span class="brand-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 7h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7z"/>
-                <path d="M8 7V5a4 4 0 0 1 8 0v2"/>
-              </svg>
-            </span>
-            <h4>Quality Fabric</h4>
-            <p>Soft, durable cotton blends chosen for lasting comfort and a luxury handfeel.</p>
-          </li>
-          <li class="brand-feature-card">
-            <span class="brand-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 5h16v4H4z"/>
-                <path d="M7 9v10"/>
-                <path d="M12 9v10"/>
-                <path d="M17 9v10"/>
-              </svg>
-            </span>
-            <h4>Premium Printing</h4>
-            <p>Sharp, long-lasting prints with refined detail for a polished brand finish.</p>
-          </li>
-          <li class="brand-feature-card">
-            <span class="brand-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 7h13l5 5v5h-2a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3V7z"/>
-                <path d="M16 7v5h5"/>
-              </svg>
-            </span>
-            <h4>Fast Delivery</h4>
-            <p>Reliable shipping so your essentials arrive quickly and ready to wear.</p>
-          </li>
-          <li class="brand-feature-card">
-            <span class="brand-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9 12l2 2 4-4"/>
-                <circle cx="12" cy="12" r="9"/>
-              </svg>
-            </span>
-            <h4>Quality Guarantee</h4>
-            <p>Every piece is checked for finish, fit integrity, and premium construction.</p>
-          </li>
-        </ul>
-
-        <!-- Animated statistics -->
         <div class="brand-stats" aria-label="Brand statistics">
           <div class="brand-stat">
             <p class="brand-stat-value"><span class="counter" data-target="10000" data-suffix="+">0</span></p>
@@ -850,12 +803,11 @@
             <p class="brand-stat-label">Quality Checked</p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Featured Products (Step 6) -->
-    <section class="featured-products reveal" aria-labelledby="featured-products-title">
+<!-- Featured Products (Step 6) -->
+    <section class="featured-products featured-rail reveal" aria-labelledby="featured-products-title">
       <div class="featured-products-inner">
 
         <!-- Section title and subtitle -->
@@ -871,7 +823,7 @@
         <ul class="product-grid">
 
           <!-- Product 1 -->
-          <li class="product-card">
+          <li class="product-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1552642986-ccb41e7059e7?auto=format&fit=crop&w=800&h=1000&q=80" alt="Essential Polo Shirt" loading="lazy">
             </div>
@@ -879,12 +831,11 @@
               <h3>Essential Polo Shirt</h3>
               <p class="product-desc">Breathable knit with a polished collar for smart-casual days.</p>
               <p class="product-price">$42.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
           <!-- Product 2 -->
-          <li class="product-card">
+          <li class="product-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=800&h=1000&q=80" alt="Soft Wash Hoodie" loading="lazy">
             </div>
@@ -892,12 +843,11 @@
               <h3>Soft Wash Hoodie</h3>
               <p class="product-desc">Cozy midweight fleece with a clean, minimal finish.</p>
               <p class="product-price">$58.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
           <!-- Product 3 -->
-          <li class="product-card">
+          <li class="product-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&h=1000&q=80" alt="Structured Cap" loading="lazy">
             </div>
@@ -905,12 +855,11 @@
               <h3>Structured Cap</h3>
               <p class="product-desc">Classic six-panel design with an adjustable fit.</p>
               <p class="product-price">$24.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
           <!-- Product 4 -->
-          <li class="product-card">
+          <li class="product-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <div class="product-image">
               <img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&h=1000&q=80" alt="Everyday Long Sleeve" loading="lazy">
             </div>
@@ -918,8 +867,7 @@
               <h3>Everyday Long Sleeve</h3>
               <p class="product-desc">Layer-ready cotton with a smooth, refined drape.</p>
               <p class="product-price">$36.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
         </ul>
@@ -928,7 +876,7 @@
     </section>
 
     <!-- New Arrivals (Premium Featured Collection) -->
-    <section class="premium-collection reveal" id="new-arrivals" aria-labelledby="premium-collection-title">
+    <section class="premium-collection premium-spotlight reveal" id="new-arrivals" aria-labelledby="premium-collection-title">
       <div class="premium-collection-inner">
 
         <!-- Section title and subtitle -->
@@ -942,7 +890,7 @@
         <ul class="premium-grid">
 
           <!-- Product 1 -->
-          <li class="premium-card">
+          <li class="premium-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="premium-badge">New</span>
             <div class="premium-image-wrap">
               <img
@@ -955,12 +903,11 @@
               <p class="premium-category">Oversized T-Shirt</p>
               <h3>Oversized Essential Tee</h3>
               <p class="premium-price">$36.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
           <!-- Product 2 -->
-          <li class="premium-card">
+          <li class="premium-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="premium-badge best-seller">Best Seller</span>
             <div class="premium-image-wrap">
               <img
@@ -973,12 +920,11 @@
               <p class="premium-category">Polo</p>
               <h3>Classic Fit Polo</h3>
               <p class="premium-price">$42.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
           <!-- Product 3 -->
-          <li class="premium-card">
+          <li class="premium-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="premium-badge best-seller">Best Seller</span>
             <div class="premium-image-wrap">
               <img
@@ -991,12 +937,11 @@
               <p class="premium-category">Hoodie</p>
               <h3>Soft Wash Hoodie</h3>
               <p class="premium-price">$58.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
           <!-- Product 4 -->
-          <li class="premium-card">
+          <li class="premium-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="premium-badge">New</span>
             <div class="premium-image-wrap">
               <img
@@ -1009,12 +954,11 @@
               <p class="premium-category">Tracksuit</p>
               <h3>City Tracksuit Set</h3>
               <p class="premium-price">$89.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
           <!-- Product 5 -->
-          <li class="premium-card">
+          <li class="premium-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="premium-badge best-seller">Best Seller</span>
             <div class="premium-image-wrap">
               <img
@@ -1027,12 +971,11 @@
               <p class="premium-category">Jeans</p>
               <h3>Slim Straight Jeans</h3>
               <p class="premium-price">$64.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
           <!-- Product 6 -->
-          <li class="premium-card">
+          <li class="premium-card is-product-clickable" tabindex="0" role="button" aria-label="View product details">
             <span class="premium-badge">New</span>
             <div class="premium-image-wrap">
               <img
@@ -1045,8 +988,7 @@
               <p class="premium-category">Cargo Pants</p>
               <h3>Relaxed Cargo Pants</h3>
               <p class="premium-price">$54.00</p>
-              <button type="button" class="btn btn-outline js-view-details">View Details</button>
-            </div>
+</div>
           </li>
 
         </ul>
@@ -1054,44 +996,8 @@
       </div>
     </section>
 
-    <!-- Quality badges -->
-    <section class="trust-badges reveal" aria-label="Quality assurances">
-      <div class="trust-badges-inner">
-        <ul class="trust-badges-grid">
-          <li>
-            <span class="trust-badge-icon" aria-hidden="true">✓</span>
-            <div>
-              <strong>Premium Fabric</strong>
-              <p>Soft, durable materials</p>
-            </div>
-          </li>
-          <li>
-            <span class="trust-badge-icon" aria-hidden="true">✦</span>
-            <div>
-              <strong>Quality Checked</strong>
-              <p>Every piece inspected</p>
-            </div>
-          </li>
-          <li>
-            <span class="trust-badge-icon" aria-hidden="true">↺</span>
-            <div>
-              <strong>Easy Returns</strong>
-              <p>14-day return policy</p>
-            </div>
-          </li>
-          <li>
-            <span class="trust-badge-icon" aria-hidden="true">⚡</span>
-            <div>
-              <strong>Fast Delivery</strong>
-              <p>Ships within 24 hours</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Customer Reviews -->
-    <section class="reviews reveal" id="reviews" aria-labelledby="reviews-title">
+<!-- Customer Reviews -->
+    <section class="reviews reviews-modern reveal" id="reviews" aria-labelledby="reviews-title">
       <div class="reviews-inner">
         <div class="reviews-header">
           <p class="section-eyebrow">Testimonials</p>
@@ -1122,7 +1028,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="faq reveal" id="faq" aria-labelledby="faq-title">
+    <section class="faq faq-modern reveal" id="faq" aria-labelledby="faq-title">
       <div class="faq-inner">
         <div class="faq-header">
           <p class="section-eyebrow">Support</p>
@@ -1153,9 +1059,11 @@
         </div>
       </div>
     </section>
+    </div><!-- /page-collections -->
 
-    <!-- Checkout / Payment — shown after Add to Cart -->
-    <section class="checkout reveal" id="checkout" aria-labelledby="checkout-title" hidden>
+    <div class="page" id="page-checkout" data-page-panel="checkout" hidden>
+    <!-- Checkout / Payment -->
+    <section class="checkout reveal is-visible is-checkout-open" id="checkout" aria-labelledby="checkout-title">
       <div class="checkout-inner">
         <div class="checkout-header">
           <h2 id="checkout-title">Checkout &amp; Payment</h2>
@@ -1217,72 +1125,74 @@
         </div>
       </div>
     </section>
+    </div><!-- /page-checkout -->
 
-    <!-- Contact Us (Step 8) — placed before the footer -->
-    <section class="contact reveal" id="contact" aria-labelledby="contact-title">
-      <div class="contact-inner">
-
-        <!-- Section title and short description -->
-        <div class="contact-header">
-          <h2 id="contact-title">Contact Us</h2>
-          <p>Have a question or want to place an order? We'd love to hear from you.</p>
+    <div class="page" id="page-about" data-page-panel="about" hidden>
+      <section class="about-page" id="about" aria-label="About Teeash Apparel">
+        <div class="about-hero">
+          <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?auto=format&fit=crop&w=1600&q=80" alt="Teeash Apparel brand story">
+          <div class="about-hero-overlay" aria-hidden="true"></div>
+          <div class="about-hero-content">
+            <p class="section-eyebrow" style="color:#93C5FD">Our Story</p>
+            <h1>Modern fashion with lasting confidence.</h1>
+            <p>Teeash Apparel crafts premium men’s essentials for everyday style — refined fits, quality fabrics, and a clean contemporary aesthetic.</p>
+          </div>
         </div>
 
-        <div class="contact-grid">
-
-          <!-- Contact form card -->
-          <div class="contact-card">
-            <form class="contact-form" action="#" method="post">
-
-              <div class="form-group">
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-              </div>
-
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
+        <div class="about-inner">
+          <div class="about-story">
+            <div>
+              <p class="section-eyebrow">Brand Story</p>
+              <h2>Designed for the modern man.</h2>
+              <p>Born from a love of clean silhouettes and elevated streetwear, Teeash brings international fashion standards to everyday wardrobes. Every piece is curated for comfort, durability, and effortless style.</p>
+              <p style="margin-top:0.9rem">Our mission is simple: make premium fashion accessible, wearable, and consistently refined — from first look to long-term favorite.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=900&h=1100&q=80" alt="Premium Teeash apparel collection">
           </div>
 
-          <!-- Contact details card -->
-          <aside class="contact-card" aria-label="Contact information">
-            <ul class="contact-details">
-              <li>
-                <span class="detail-label">📍 Location</span>
-                <span class="detail-value">Karachi, Pakistan</span>
-              </li>
-              <li>
-                <span class="detail-label">📞 Phone</span>
-                <span class="detail-value">
-                  <a href="tel:+92XXXXXXXXXX">+92 XXX XXXXXXX</a>
-                </span>
-              </li>
-              <li>
-                <span class="detail-label">✉️ Email</span>
-                <span class="detail-value">
-                  <a href="mailto:contact@teeashapparel.com">contact@teeashapparel.com</a>
-                </span>
-              </li>
-            </ul>
-          </aside>
+          <p class="section-eyebrow">Why Teeash</p>
+          <h2>What we stand for</h2>
+          <div class="about-grid">
+            <article class="about-feature-card">
+              <h3>Premium Quality</h3>
+              <p>Carefully selected fabrics and precise stitching for pieces that look sharp and feel better wear after wear.</p>
+            </article>
+            <article class="about-feature-card">
+              <h3>Fast Delivery</h3>
+              <p>Orders move quickly from our studio to your door — with reliable tracking and easy updates.</p>
+            </article>
+            <article class="about-feature-card">
+              <h3>Customer Satisfaction</h3>
+              <p>Friendly support, easy exchanges, and a fit-focused experience designed around you.</p>
+            </article>
+            <article class="about-feature-card">
+              <h3>Modern Fashion</h3>
+              <p>Minimal, athletic, and street-ready styles inspired by global fashion capitals.</p>
+            </article>
+          </div>
 
+          <div class="about-contact-panel" id="contact">
+            <div>
+              <p class="section-eyebrow">Contact</p>
+              <h2>Let’s talk style.</h2>
+              <p>Reach out for orders, collaborations, or styling advice. We’re here to help you build a wardrobe that feels premium every day.</p>
+              <p style="margin-top:1rem"><strong>Email:</strong> contact@teeashapparel.com</p>
+              <p><strong>Phone:</strong> +92 XXX XXXXXXX</p>
+              <p><strong>Location:</strong> Karachi, Pakistan</p>
+            </div>
+            <div>
+              <h3 style="margin-bottom:0.4rem">Follow Teeash</h3>
+              <p style="color:var(--color-muted)">Stay inspired with new drops and styling ideas.</p>
+              <ul class="about-social" aria-label="Social media">
+                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">in</a></li>
+                <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">wa</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div><!-- /page-about -->
 
   </main>
 
@@ -1316,7 +1226,7 @@
 
           <div class="product-modal-details">
             <div class="product-detail-block">
-              <h3>Fabric &amp; Quality</h3>
+              <h3>Material</h3>
               <p id="product-modal-fabric">Premium cotton blend with a soft handfeel, durable stitching, and a refined everyday finish.</p>
             </div>
             <div class="product-detail-block">
@@ -1325,16 +1235,58 @@
             </div>
           </div>
 
-          <button type="button" class="btn btn-primary js-add-to-cart" id="product-modal-cart">Add to Cart</button>
-          <p class="product-modal-note">Select your size and color, then continue to checkout.</p>
+          <div class="product-modal-group">
+            <p class="product-modal-label">Quantity</p>
+            <div class="product-modal-qty" id="product-modal-qty">
+              <button type="button" id="qty-minus" aria-label="Decrease quantity">−</button>
+              <span id="product-modal-qty-value">1</span>
+              <button type="button" id="qty-plus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+
+          <div class="product-modal-actions">
+            <button type="button" class="btn btn-primary js-add-to-cart" id="product-modal-cart">Add to Cart</button>
+            <button type="button" class="btn btn-outline" id="product-modal-buy">Buy Now</button>
+          </div>
+          <p class="product-modal-note">Select size and color, then add to cart or buy now.</p>
+
+          <div class="product-modal-related" id="product-modal-related">
+            <h3>Related Products</h3>
+            <div class="related-grid" id="related-products"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+
+  <!-- Slide-in shopping cart drawer -->
+  <div class="cart-drawer" id="cart-drawer" hidden aria-hidden="true">
+    <div class="cart-drawer-backdrop" data-close-drawer></div>
+    <aside class="cart-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+      <div class="cart-drawer-header">
+        <h2 id="cart-drawer-title">Your Cart</h2>
+        <button type="button" class="cart-drawer-close" data-close-drawer aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-drawer-body">
+        <p class="cart-drawer-empty" id="cart-drawer-empty">Your cart is empty.</p>
+        <ul class="cart-drawer-items" id="cart-drawer-items"></ul>
+      </div>
+      <div class="cart-drawer-footer">
+        <div class="cart-totals-row"><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div>
+        <div class="cart-totals-row"><span>Shipping</span><strong id="cart-shipping">$0.00</strong></div>
+        <div class="cart-totals-row total"><span>Total</span><strong id="cart-drawer-total">$0.00</strong></div>
+        <div class="cart-drawer-actions">
+          <button type="button" class="btn btn-primary" id="cart-checkout-btn">Checkout</button>
+          <button type="button" class="btn btn-outline" id="cart-continue-btn">Continue Shopping</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
   <div class="cart-toast" id="cart-toast" hidden role="status" aria-live="polite">
     <span id="cart-toast-text">Added to cart</span>
-    <a href="#checkout" class="cart-toast-link">View Checkout</a>
+    <button type="button" class="cart-toast-link" id="cart-toast-open">View Cart</button>
   </div>
 
   <!-- Site footer -->
@@ -1342,7 +1294,7 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div class="footer-col footer-brand">
-          <a href="#home" class="footer-logo">Teeash Apparel</a>
+          <a href="#home" class="footer-logo" data-nav data-page="home">Teeash Apparel</a>
           <p>
             Premium men’s streetwear crafted for everyday confidence —
             quality fabric, modern fits, and lasting style.
@@ -1357,17 +1309,17 @@
         <div class="footer-col">
           <h3 class="footer-heading">Shop</h3>
           <ul class="footer-links">
-            <li><a href="#categories">Categories</a></li>
-            <li><a href="#streetwear-collection">Featured Collections</a></li>
-            <li><a href="#new-arrivals">New Arrivals</a></li>
-            <li><a href="#bestsellers">Best Sellers</a></li>
+            <li><a href="#categories" data-nav data-page="categories">Categories</a></li>
+            <li><a href="#collections" data-nav data-page="collections">Collections</a></li>
+            <li><a href="#collections" data-nav data-page="collections">New Arrivals</a></li>
+            <li><a href="#collections" data-nav data-page="collections">Best Sellers</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h3 class="footer-heading">Contact</h3>
           <ul class="footer-links">
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#about" data-nav data-page="about">About &amp; Contact</a></li>
             <li><a href="mailto:contact@teeashapparel.com">contact@teeashapparel.com</a></li>
             <li><a href="tel:+92XXXXXXXXXX">+92 XXX XXXXXXX</a></li>
             <li><span>Karachi, Pakistan</span></li>
@@ -1405,922 +1357,7 @@
     <span>WhatsApp Support</span>
   </a>
 
-  <!-- Small scripts: hero video fallback + premium navbar behavior -->
-  <script>
-    (function () {
-      /* ----- Hero background: image always visible; video optional ----- */
-      var heroBg = document.getElementById("hero-bg");
-      var video = document.querySelector(".hero-video");
-
-      if (heroBg && video) {
-        var preferImageOnly = window.matchMedia("(max-width: 700px)").matches;
-
-        function showImageOnly() {
-          heroBg.classList.remove("is-video-ready");
-          heroBg.classList.add("is-fallback");
-          video.pause();
-        }
-
-        // Phones: keep the cinematic image only for faster loading
-        if (preferImageOnly) {
-          showImageOnly();
-        } else {
-          video.addEventListener("error", showImageOnly);
-
-          var source = video.querySelector("source");
-          if (source) {
-            source.addEventListener("error", showImageOnly);
-          }
-
-          // Fade video in only after real frames are ready
-          video.addEventListener("loadeddata", function () {
-            try {
-              video.playbackRate = 0.85;
-            } catch (e) { /* ignore */ }
-
-            var playPromise = video.play();
-            if (playPromise && typeof playPromise.then === "function") {
-              playPromise
-                .then(function () {
-                  heroBg.classList.add("is-video-ready");
-                  heroBg.classList.remove("is-fallback");
-                })
-                .catch(showImageOnly);
-            } else {
-              heroBg.classList.add("is-video-ready");
-            }
-          });
-
-          // Start loading
-          video.load();
-        }
-      }
-
-      /* ----- Premium navbar (Step 11) ----- */
-      var header = document.getElementById("site-header");
-      var toggle = document.getElementById("nav-toggle");
-      var navLinks = document.querySelectorAll("[data-nav]");
-
-      if (!header) {
-        return;
-      }
-
-      // Become solid + blurred after scrolling past a small threshold
-      function updateScrollState() {
-        if (window.scrollY > 40) {
-          header.classList.add("is-scrolled");
-        } else {
-          header.classList.remove("is-scrolled");
-        }
-      }
-
-      updateScrollState();
-      window.addEventListener("scroll", updateScrollState, { passive: true });
-
-      // Mobile hamburger open / close
-      if (toggle) {
-        toggle.addEventListener("click", function () {
-          var isOpen = header.classList.toggle("is-menu-open");
-          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-        });
-      }
-
-      // Highlight the clicked nav item and close the mobile menu
-      navLinks.forEach(function (link) {
-        link.addEventListener("click", function () {
-          navLinks.forEach(function (item) {
-            item.classList.remove("active");
-          });
-          link.classList.add("active");
-          header.classList.remove("is-menu-open");
-          if (toggle) {
-            toggle.setAttribute("aria-expanded", "false");
-            toggle.setAttribute("aria-label", "Open menu");
-          }
-        });
-      });
-
-      /* ----- Product search ----- */
-      var searchToggle = document.getElementById("search-toggle");
-      var searchForm = document.getElementById("site-search");
-      var searchInput = document.getElementById("site-search-input");
-
-      if (searchToggle && searchForm && searchInput) {
-        searchToggle.addEventListener("click", function () {
-          var isOpen = !searchForm.hidden;
-          searchForm.hidden = isOpen;
-          searchToggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
-          if (!isOpen) {
-            searchInput.focus();
-          }
-        });
-
-        searchForm.addEventListener("submit", function (event) {
-          event.preventDefault();
-          var query = searchInput.value.trim().toLowerCase();
-          if (!query) {
-            return;
-          }
-
-          var titles = document.querySelectorAll(
-            ".streetwear-info h3, .bs-info h3, .premium-info h3, .product-info h3"
-          );
-          var match = null;
-
-          titles.forEach(function (title) {
-            if (!match && title.textContent.toLowerCase().indexOf(query) !== -1) {
-              match = title.closest("li") || title;
-            }
-          });
-
-          searchForm.hidden = true;
-          searchToggle.setAttribute("aria-expanded", "false");
-          header.classList.remove("is-menu-open");
-
-          if (match && match.scrollIntoView) {
-            match.scrollIntoView({ behavior: "smooth", block: "center" });
-          }
-        });
-      }
-
-      /* ----- Fade-in product cards (Step 12) ----- */
-      var streetwearCards = document.querySelectorAll(".streetwear-card");
-
-      if (streetwearCards.length && "IntersectionObserver" in window) {
-        var cardObserver = new IntersectionObserver(
-          function (entries, observer) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.15 }
-        );
-
-        streetwearCards.forEach(function (card, index) {
-          card.style.transitionDelay = index * 0.08 + "s";
-          cardObserver.observe(card);
-        });
-      } else {
-        streetwearCards.forEach(function (card) {
-          card.classList.add("is-visible");
-        });
-      }
-
-      /* ----- Section entrance animations (luxury redesign) ----- */
-      var revealSections = document.querySelectorAll(".reveal");
-
-      if (revealSections.length && "IntersectionObserver" in window) {
-        var revealObserver = new IntersectionObserver(
-          function (entries, observer) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.12 }
-        );
-
-        revealSections.forEach(function (section) {
-          revealObserver.observe(section);
-        });
-      } else {
-        revealSections.forEach(function (section) {
-          section.classList.add("is-visible");
-        });
-      }
-
-      /* Also reveal premium / bestseller cards on scroll */
-      var premiumCards = document.querySelectorAll(".premium-card, .product-card, .bestseller-card");
-      if (premiumCards.length && "IntersectionObserver" in window) {
-        var premiumObserver = new IntersectionObserver(
-          function (entries, observer) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.12 }
-        );
-
-        premiumCards.forEach(function (card, index) {
-          if (!card.classList.contains("bestseller-card")) {
-            card.classList.add("reveal-card");
-          }
-          card.style.transitionDelay = (index % 8) * 0.06 + "s";
-          premiumObserver.observe(card);
-        });
-      } else {
-        premiumCards.forEach(function (card) {
-          card.classList.add("is-visible");
-        });
-      }
-
-      /* Size + color swatch selection on Best Sellers cards */
-      document.querySelectorAll(".bestseller-card").forEach(function (card) {
-        card.querySelectorAll(".bs-size").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            card.querySelectorAll(".bs-size").forEach(function (b) {
-              b.classList.remove("is-active");
-            });
-            btn.classList.add("is-active");
-          });
-        });
-
-        card.querySelectorAll(".bs-swatch").forEach(function (swatch) {
-          swatch.addEventListener("click", function () {
-            card.querySelectorAll(".bs-swatch").forEach(function (s) {
-              s.classList.remove("is-active");
-            });
-            swatch.classList.add("is-active");
-          });
-        });
-      });
-
-      /* ----- Animated counters (Step 14) ----- */
-      function animateCounter(el) {
-        var target = parseFloat(el.getAttribute("data-target"), 10);
-        var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
-        var suffix = el.getAttribute("data-suffix") || "";
-        var duration = 1600;
-        var start = null;
-
-        function formatValue(value) {
-          if (decimals > 0) {
-            return value.toFixed(decimals) + suffix;
-          }
-          return Math.floor(value).toLocaleString() + suffix;
-        }
-
-        function step(timestamp) {
-          if (!start) {
-            start = timestamp;
-          }
-          var progress = Math.min((timestamp - start) / duration, 1);
-          var eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = formatValue(target * eased);
-          if (progress < 1) {
-            window.requestAnimationFrame(step);
-          } else {
-            el.textContent = formatValue(target);
-          }
-        }
-
-        window.requestAnimationFrame(step);
-      }
-
-      var counters = document.querySelectorAll(".counter");
-      if (counters.length && "IntersectionObserver" in window) {
-        var statsBlock = document.querySelector(".brand-stats");
-        var countersStarted = false;
-
-        var statsObserver = new IntersectionObserver(
-          function (entries, observer) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting && !countersStarted) {
-                countersStarted = true;
-                counters.forEach(animateCounter);
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.35 }
-        );
-
-        if (statsBlock) {
-          statsObserver.observe(statsBlock);
-        }
-      } else {
-        counters.forEach(function (el) {
-          var target = el.getAttribute("data-target");
-          var suffix = el.getAttribute("data-suffix") || "";
-          var decimals = el.getAttribute("data-decimals");
-          el.textContent = decimals
-            ? parseFloat(target).toFixed(decimals) + suffix
-            : Number(target).toLocaleString() + suffix;
-        });
-      }
-    })();
-
-    /* View Details modal — premium product details */
-    (function () {
-      var modal = document.getElementById("product-modal");
-      if (!modal) {
-        return;
-      }
-
-      var imageEl = document.getElementById("product-modal-image");
-      var titleEl = document.getElementById("product-modal-title");
-      var priceEl = document.getElementById("product-modal-price");
-      var descEl = document.getElementById("product-modal-desc");
-      var sizesEl = document.getElementById("product-modal-sizes");
-      var colorsEl = document.getElementById("product-modal-colors");
-      var thumbsEl = document.getElementById("product-modal-thumbs");
-      var badgeEl = document.getElementById("product-modal-badge");
-      var fabricEl = document.getElementById("product-modal-fabric");
-      var deliveryEl = document.getElementById("product-modal-delivery");
-      var defaultImage = "assets/hero/male-tee.jpg";
-      var galleryExtras = [
-        "assets/hero/male-tee.jpg",
-        "assets/hero/male-streetwear.jpg"
-      ];
-      var sizes = ["S", "M", "L", "XL"];
-      var colors = [
-        { name: "Black", value: "#0B0B0B" },
-        { name: "White", value: "#FFFFFF" },
-        { name: "Olive", value: "#556B2F" },
-        { name: "Navy", value: "#1B2A4A" }
-      ];
-
-      function textOf(root, selector) {
-        var node = root.querySelector(selector);
-        return node ? node.textContent.trim() : "";
-      }
-
-      function getProduct(trigger) {
-        var card =
-          trigger.closest(".bestseller-card") ||
-          trigger.closest(".streetwear-card") ||
-          trigger.closest(".premium-card") ||
-          trigger.closest(".product-card");
-        if (!card) {
-          return null;
-        }
-        var img = card.querySelector("img");
-        var labelNode =
-          card.querySelector(".product-label") ||
-          card.querySelector(".bs-badge") ||
-          card.querySelector(".premium-badge");
-        var activeSize = card.querySelector(".bs-size.is-active");
-        var activeColor = card.querySelector(".bs-swatch.is-active");
-
-        return {
-          name: textOf(card, "h3") || "Teeash Product",
-          price:
-            textOf(card, ".bs-price") ||
-            textOf(card, ".streetwear-price") ||
-            textOf(card, ".product-price") ||
-            textOf(card, ".premium-price") ||
-            "",
-          description:
-            textOf(card, ".bs-desc") ||
-            textOf(card, ".streetwear-desc") ||
-            textOf(card, ".product-desc") ||
-            textOf(card, ".premium-category") ||
-            "Premium Teeash Apparel piece.",
-          image: img && img.getAttribute("src") ? img.getAttribute("src") : defaultImage,
-          alt: img && img.getAttribute("alt") ? img.getAttribute("alt") : "Product image",
-          label: labelNode ? labelNode.textContent.trim() : "",
-          selectedSize: activeSize ? activeSize.textContent.trim() : "M",
-          selectedColor: activeColor
-            ? activeColor.getAttribute("title") || activeColor.getAttribute("aria-label") || "Black"
-            : "Black"
-        };
-      }
-
-      function renderGallery(product) {
-        if (!thumbsEl || !imageEl) {
-          return;
-        }
-
-        var images = [product.image].concat(
-          galleryExtras.filter(function (src) {
-            return src !== product.image;
-          })
-        );
-
-        thumbsEl.innerHTML = "";
-        images.forEach(function (src, index) {
-          var btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = "product-thumb" + (index === 0 ? " is-active" : "");
-          btn.innerHTML = '<img src="' + src + '" alt="">';
-          btn.addEventListener("click", function () {
-            imageEl.src = src;
-            thumbsEl.querySelectorAll(".product-thumb").forEach(function (el) {
-              el.classList.remove("is-active");
-            });
-            btn.classList.add("is-active");
-          });
-          thumbsEl.appendChild(btn);
-        });
-      }
-
-      function renderOptions(product) {
-        sizesEl.innerHTML = "";
-        sizes.forEach(function (size) {
-          var btn = document.createElement("button");
-          btn.type = "button";
-          btn.className =
-            "bs-size" + (size === product.selectedSize ? " is-active" : "");
-          btn.textContent = size;
-          btn.addEventListener("click", function () {
-            sizesEl.querySelectorAll(".bs-size").forEach(function (el) {
-              el.classList.remove("is-active");
-            });
-            btn.classList.add("is-active");
-          });
-          sizesEl.appendChild(btn);
-        });
-
-        colorsEl.innerHTML = "";
-        colors.forEach(function (color) {
-          var swatch = document.createElement("button");
-          swatch.type = "button";
-          swatch.className =
-            "bs-swatch" +
-            (color.name === product.selectedColor ? " is-active" : "");
-          swatch.style.setProperty("--swatch", color.value);
-          swatch.title = color.name;
-          swatch.setAttribute("aria-label", color.name);
-          swatch.addEventListener("click", function () {
-            colorsEl.querySelectorAll(".bs-swatch").forEach(function (el) {
-              el.classList.remove("is-active");
-            });
-            swatch.classList.add("is-active");
-          });
-          colorsEl.appendChild(swatch);
-        });
-      }
-
-      var lockedScrollY = 0;
-
-      function openModal(product) {
-        if (!product) {
-          return;
-        }
-        titleEl.textContent = product.name;
-        priceEl.textContent = product.price;
-        descEl.textContent = product.description;
-        imageEl.src = product.image;
-        imageEl.alt = product.alt;
-
-        if (badgeEl) {
-          if (product.label) {
-            badgeEl.hidden = false;
-            badgeEl.textContent = product.label;
-          } else {
-            badgeEl.hidden = true;
-            badgeEl.textContent = "";
-          }
-        }
-
-        if (fabricEl) {
-          fabricEl.textContent =
-            "Crafted from premium fabric with a soft handfeel, reinforced seams, and lasting color integrity for everyday Teeash wear.";
-        }
-        if (deliveryEl) {
-          deliveryEl.textContent =
-            "Orders ship in 24 hours. Standard delivery 3–5 business days. Easy exchanges within 14 days of delivery.";
-        }
-
-        renderGallery(product);
-        renderOptions(product);
-
-        lockedScrollY = window.scrollY || window.pageYOffset || 0;
-        modal.hidden = false;
-        document.body.classList.add("modal-open");
-        document.body.style.top = "-" + lockedScrollY + "px";
-        void modal.offsetWidth;
-        modal.classList.add("is-open");
-        modal.setAttribute("aria-hidden", "false");
-      }
-
-      function closeModal() {
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
-        document.body.style.top = "";
-        window.scrollTo(0, lockedScrollY);
-        window.setTimeout(function () {
-          if (!modal.classList.contains("is-open")) {
-            modal.hidden = true;
-          }
-        }, 300);
-      }
-
-      document.querySelectorAll(".js-view-details").forEach(function (btn) {
-        btn.addEventListener("click", function (event) {
-          event.preventDefault();
-          event.stopPropagation();
-          openModal(getProduct(btn));
-        });
-      });
-
-      modal.querySelectorAll("[data-close-modal]").forEach(function (el) {
-        el.addEventListener("click", closeModal);
-      });
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && modal.classList.contains("is-open")) {
-          closeModal();
-        }
-      });
-    })();
-
-    /* Shopping cart → checkout / payment flow */
-    (function () {
-      var STORAGE_KEY = "teeash-cart";
-      var defaultImage = "assets/hero/male-tee.jpg";
-      var countEl = document.getElementById("cart-count");
-      var itemsEl = document.getElementById("checkout-items");
-      var emptyEl = document.getElementById("checkout-empty");
-      var totalEl = document.getElementById("checkout-total");
-      var checkoutSection = document.getElementById("checkout");
-      var checkoutForm = document.getElementById("checkout-form");
-      var checkoutNote = document.getElementById("checkout-note");
-      var cart = [];
-
-      function textOf(root, selector) {
-        var node = root ? root.querySelector(selector) : null;
-        return node ? node.textContent.trim() : "";
-      }
-
-      function parsePrice(text) {
-        var value = parseFloat(String(text).replace(/[^0-9.]/g, ""), 10);
-        return isNaN(value) ? 0 : value;
-      }
-
-      function formatMoney(amount) {
-        return "$" + amount.toFixed(2);
-      }
-
-      function loadCart() {
-        try {
-          var raw = localStorage.getItem(STORAGE_KEY);
-          cart = raw ? JSON.parse(raw) : [];
-          if (!Array.isArray(cart)) {
-            cart = [];
-          }
-        } catch (e) {
-          cart = [];
-        }
-      }
-
-      function saveCart() {
-        try {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-        } catch (e) { /* ignore */ }
-      }
-
-      function itemKey(item) {
-        return [item.name, item.size || "", item.color || ""].join("|");
-      }
-
-      function getActiveSize(root) {
-        var el = root.querySelector(".bs-size.is-active, .product-modal-sizes .bs-size.is-active");
-        return el ? el.textContent.trim() : "";
-      }
-
-      function getActiveColor(root) {
-        var el = root.querySelector(".bs-swatch.is-active, .product-modal-colors .bs-swatch.is-active");
-        if (!el) {
-          return "";
-        }
-        return el.getAttribute("title") || el.getAttribute("aria-label") || "";
-      }
-
-      function getProductFromCard(trigger) {
-        var card =
-          trigger.closest(".bestseller-card") ||
-          trigger.closest(".streetwear-card") ||
-          trigger.closest(".premium-card") ||
-          trigger.closest(".product-card");
-        if (!card) {
-          return null;
-        }
-
-        var img = card.querySelector("img");
-        var priceText =
-          textOf(card, ".bs-price") ||
-          textOf(card, ".streetwear-price") ||
-          textOf(card, ".product-price") ||
-          textOf(card, ".premium-price") ||
-          "";
-
-        return {
-          name: textOf(card, "h3") || "Teeash Product",
-          price: parsePrice(priceText),
-          priceText: priceText || formatMoney(parsePrice(priceText)),
-          image: img && img.getAttribute("src") ? img.getAttribute("src") : defaultImage,
-          size: getActiveSize(card),
-          color: getActiveColor(card)
-        };
-      }
-
-      function getProductFromModal() {
-        var modal = document.getElementById("product-modal");
-        if (!modal || !modal.classList.contains("is-open")) {
-          return null;
-        }
-        var title = document.getElementById("product-modal-title");
-        var priceNode = document.getElementById("product-modal-price");
-        var image = document.getElementById("product-modal-image");
-        var priceText = priceNode ? priceNode.textContent.trim() : "";
-
-        return {
-          name: title ? title.textContent.trim() : "Teeash Product",
-          price: parsePrice(priceText),
-          priceText: priceText || formatMoney(parsePrice(priceText)),
-          image: image && image.getAttribute("src") ? image.getAttribute("src") : defaultImage,
-          size: getActiveSize(modal),
-          color: getActiveColor(modal)
-        };
-      }
-
-      function closeProductModal() {
-        var productModal = document.getElementById("product-modal");
-        if (!productModal || !productModal.classList.contains("is-open")) {
-          return;
-        }
-        var modalTop = document.body.style.top;
-        var modalScroll = modalTop
-          ? Math.abs(parseInt(modalTop, 10)) || 0
-          : window.scrollY || 0;
-        productModal.classList.remove("is-open");
-        productModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("modal-open");
-        document.body.style.top = "";
-        productModal.hidden = true;
-        window.scrollTo(0, modalScroll);
-      }
-
-      function goToCheckout() {
-        if (!checkoutSection) {
-          return;
-        }
-
-        checkoutSection.hidden = false;
-        checkoutSection.classList.add("is-visible", "is-checkout-open");
-
-        window.setTimeout(function () {
-          var header = document.getElementById("site-header");
-          var offset = header ? header.offsetHeight + 12 : 80;
-          var top =
-            checkoutSection.getBoundingClientRect().top +
-            (window.pageYOffset || document.documentElement.scrollTop) -
-            offset;
-
-          window.scrollTo({
-            top: Math.max(0, top),
-            behavior: "smooth"
-          });
-
-          var nameField = document.getElementById("checkout-name");
-          if (nameField) {
-            nameField.focus({ preventScroll: true });
-          }
-        }, 60);
-      }
-
-      function addToCart(product) {
-        if (!product || !product.name) {
-          return;
-        }
-
-        var incoming = {
-          name: product.name,
-          price: product.price,
-          priceText: product.priceText || formatMoney(product.price),
-          image: product.image || defaultImage,
-          size: product.size || "",
-          color: product.color || "",
-          quantity: 1
-        };
-
-        var key = itemKey(incoming);
-        var existing = cart.find(function (item) {
-          return itemKey(item) === key;
-        });
-
-        if (existing) {
-          existing.quantity += 1;
-        } else {
-          cart.push(incoming);
-        }
-
-        saveCart();
-        renderCheckout();
-        goToCheckout();
-      }
-
-      function updateQuantity(index, delta) {
-        if (!cart[index]) {
-          return;
-        }
-        cart[index].quantity += delta;
-        if (cart[index].quantity <= 0) {
-          cart.splice(index, 1);
-        }
-        saveCart();
-        renderCheckout();
-      }
-
-      function removeItem(index) {
-        cart.splice(index, 1);
-        saveCart();
-        renderCheckout();
-      }
-
-      function getCount() {
-        return cart.reduce(function (sum, item) {
-          return sum + item.quantity;
-        }, 0);
-      }
-
-      function getGrandTotal() {
-        return cart.reduce(function (sum, item) {
-          return sum + item.price * item.quantity;
-        }, 0);
-      }
-
-      function renderCheckout() {
-        if (!itemsEl || !countEl || !totalEl || !emptyEl) {
-          return;
-        }
-
-        countEl.textContent = String(getCount());
-        totalEl.textContent = formatMoney(getGrandTotal());
-        emptyEl.hidden = cart.length > 0;
-        itemsEl.innerHTML = "";
-
-        cart.forEach(function (item, index) {
-          var li = document.createElement("li");
-          li.className = "checkout-item";
-
-          var sizeLabel = item.size ? item.size : "—";
-          var colorLabel = item.color ? item.color : "—";
-          var lineTotal = item.price * item.quantity;
-
-          li.innerHTML =
-            '<img class="checkout-item-image" src="' + item.image + '" alt="' + item.name.replace(/"/g, "&quot;") + '">' +
-            '<div class="checkout-item-info">' +
-              '<h4 class="checkout-item-name">' + item.name + "</h4>" +
-              '<p class="checkout-item-meta">Color: ' + colorLabel + " · Size: " + sizeLabel + "</p>" +
-              '<p class="checkout-item-meta">Price: ' + formatMoney(item.price) + "</p>" +
-              '<div class="checkout-item-row">' +
-                '<div class="checkout-item-qty" aria-label="Quantity">' +
-                  '<button type="button" class="cart-qty-btn" data-qty-minus="' + index + '" aria-label="Decrease quantity">−</button>' +
-                  "<span>" + item.quantity + "</span>" +
-                  '<button type="button" class="cart-qty-btn" data-qty-plus="' + index + '" aria-label="Increase quantity">+</button>' +
-                "</div>" +
-                '<p class="checkout-item-total">' + formatMoney(lineTotal) + "</p>" +
-              "</div>" +
-              '<button type="button" class="cart-item-remove" data-remove="' + index + '">Remove</button>' +
-            "</div>";
-
-          itemsEl.appendChild(li);
-        });
-      }
-
-      function flashAdded(btn) {
-        if (!btn) {
-          return;
-        }
-        var original = btn.textContent;
-        btn.classList.add("is-added");
-        btn.textContent = "Added ✓";
-        window.setTimeout(function () {
-          btn.textContent = original;
-          btn.classList.remove("is-added");
-        }, 1200);
-
-        var toast = document.getElementById("cart-toast");
-        var toastText = document.getElementById("cart-toast-text");
-        if (toast && toastText) {
-          toastText.textContent = "Added to cart — continue to checkout";
-          toast.hidden = false;
-          toast.classList.add("is-visible");
-          window.setTimeout(function () {
-            toast.classList.remove("is-visible");
-            window.setTimeout(function () {
-              if (!toast.classList.contains("is-visible")) {
-                toast.hidden = true;
-              }
-            }, 280);
-          }, 2600);
-        }
-      }
-
-      document.querySelectorAll(".js-add-to-cart").forEach(function (btn) {
-        btn.addEventListener("click", function (event) {
-          event.preventDefault();
-          event.stopPropagation();
-
-          var product =
-            btn.id === "product-modal-cart"
-              ? getProductFromModal()
-              : getProductFromCard(btn);
-
-          if (!product) {
-            return;
-          }
-
-          if (btn.id === "product-modal-cart") {
-            closeProductModal();
-          }
-
-          addToCart(product);
-          flashAdded(btn);
-        });
-      });
-
-      if (itemsEl) {
-        itemsEl.addEventListener("click", function (event) {
-          var target = event.target;
-          if (!(target instanceof Element)) {
-            return;
-          }
-          if (target.hasAttribute("data-qty-plus")) {
-            updateQuantity(parseInt(target.getAttribute("data-qty-plus"), 10), 1);
-          } else if (target.hasAttribute("data-qty-minus")) {
-            updateQuantity(parseInt(target.getAttribute("data-qty-minus"), 10), -1);
-          } else if (target.hasAttribute("data-remove")) {
-            removeItem(parseInt(target.getAttribute("data-remove"), 10));
-          }
-        });
-      }
-
-      if (checkoutForm) {
-        checkoutForm.addEventListener("submit", function (event) {
-          event.preventDefault();
-          if (!cart.length) {
-            if (checkoutNote) {
-              checkoutNote.hidden = false;
-              checkoutNote.textContent = "Please add a product before placing your order.";
-            }
-            return;
-          }
-          if (checkoutNote) {
-            checkoutNote.hidden = false;
-            checkoutNote.textContent = "Thank you. Your order has been received and is ready for payment processing.";
-          }
-          checkoutForm.reset();
-          cart = [];
-          saveCart();
-          renderCheckout();
-        });
-      }
-
-      var cartToggle = document.getElementById("cart-toggle");
-      if (cartToggle) {
-        cartToggle.addEventListener("click", function (event) {
-          if (!cart.length) {
-            return;
-          }
-          event.preventDefault();
-          goToCheckout();
-        });
-      }
-
-      loadCart();
-      renderCheckout();
-      if (cart.length && checkoutSection) {
-        checkoutSection.hidden = false;
-        checkoutSection.classList.add("is-visible", "is-checkout-open");
-      }
-    })();
-
-    /* Subtle image loading skeletons (non-blocking) */
-    (function () {
-      var selectors = [
-        ".streetwear-image-wrap",
-        ".premium-image-wrap",
-        ".bs-image-wrap",
-        ".category-card",
-        ".brand-story-media",
-        ".about-media",
-        ".product-modal-media"
-      ];
-
-      document.querySelectorAll(selectors.join(",")).forEach(function (wrap) {
-        var img = wrap.querySelector("img");
-        if (!img) {
-          return;
-        }
-
-        wrap.classList.add("media-skeleton");
-
-        function markLoaded() {
-          wrap.classList.add("is-loaded");
-        }
-
-        if (img.complete && img.naturalWidth > 0) {
-          markLoaded();
-        } else {
-          img.addEventListener("load", markLoaded);
-          img.addEventListener("error", markLoaded);
-        }
-      });
-    })();
-  </script>
+  <script src="app.js" defer></script>
 
 </body>
 </html>
