@@ -100,6 +100,30 @@
       if (!page) return;
       event.preventDefault();
       showPage(page);
+      var targetId = link.getAttribute("data-scroll-target");
+      if (targetId) {
+        window.setTimeout(function () {
+          var el = document.getElementById(targetId);
+          if (el) {
+            var offset = header ? header.offsetHeight + 12 : 72;
+            var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+          }
+        }, 60);
+      }
+    });
+  });
+
+  document.querySelectorAll(".shop-anchors a").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      var href = link.getAttribute("href") || "";
+      if (href.charAt(0) !== "#") return;
+      event.preventDefault();
+      var el = document.getElementById(href.slice(1));
+      if (!el) return;
+      var offset = header ? header.offsetHeight + 12 : 72;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
     });
   });
 
@@ -139,9 +163,9 @@
       if (!query) return;
 
       showPage("collections");
-      var titles = document.querySelectorAll(
-        ".streetwear-info h3, .bs-info h3, .premium-info h3, .product-info h3"
-      );
+          var titles = document.querySelectorAll(
+            ".streetwear-info h3, .bs-info h3, .premium-info h3, .product-info h3, .catalog-info h3"
+          );
       var match = null;
       titles.forEach(function (title) {
         if (!match && title.textContent.toLowerCase().indexOf(query) !== -1) {
