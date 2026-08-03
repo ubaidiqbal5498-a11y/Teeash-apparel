@@ -263,7 +263,7 @@
   var modalQty = 1;
   var currentProduct = null;
   var defaultImage = "assets/hero/male-tee.jpg";
-  var galleryExtras = ["assets/hero/male-tee.jpg", "assets/hero/male-streetwear.jpg"];
+  var galleryExtras = ["assets/hero/male-tee.jpg", "assets/hero/luxury-mens-fashion.jpg"];
   var sizes = ["S", "M", "L", "XL"];
   var colors = [
     { name: "Black", value: "#0B0B0B" },
