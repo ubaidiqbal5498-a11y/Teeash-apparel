@@ -160,6 +160,13 @@
     });
   });
 
+  document.querySelectorAll(".collection-category-card[data-category-filter]").forEach(function (cardLink) {
+    cardLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      applyCategoryFilter(cardLink.getAttribute("data-category-filter") || "all");
+    });
+  });
+
   if (header) {
     function updateScrollState() {
       header.classList.toggle("is-scrolled", window.scrollY > 24);
