@@ -84,21 +84,30 @@
   <main>
 <div class="page is-active" id="page-home" data-page-panel="home">
 
-    <section class="hero hero-video-full" id="home" aria-label="Teeash Apparel hero video">
+    <section class="hero hero-luxury" id="home" aria-label="Teeash Apparel hero">
       <div class="hero-bg" id="hero-bg">
-        <video
-          class="hero-video"
-          muted
-          loop
-          autoplay
-          playsinline
-          preload="auto"
-          poster="assets/hero/luxury-mens-fashion.jpg"
+        <img
+          class="hero-base-image"
+          src="assets/hero/premium-tee-model.jpg"
+          alt="Male model in premium Teeash-style essentials"
+          width="2400"
+          height="1600"
+          decoding="async"
+          fetchpriority="high"
         >
-          <source src="assets/hero/luxury-mens-fashion.mp4" type="video/mp4">
-        </video>
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content hero-luxury-content">
+        <p class="hero-eyebrow">Teeash Apparel</p>
+        <h1 class="hero-heading">Refined for the modern man.</h1>
+        <p class="hero-description">
+          Premium tees and elevated streetwear — clean cuts, considered fabrics, and quiet confidence in every piece.
+        </p>
+        <div class="hero-actions">
+          <a href="#collections" class="btn btn-primary hero-cta-primary" data-nav data-page="collections">Shop Collection</a>
+          <a href="#categories" class="btn btn-secondary hero-cta-secondary" data-nav data-page="categories">Explore Products</a>
+        </div>
+      </div>
     </section>
 
     <!-- Signature interactive T-shirt showcase -->
