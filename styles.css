@@ -5501,7 +5501,8 @@ body.modal-open {
   gap: 0.5rem;
   margin-top: 1rem;
 }
-.shop-anchors a {
+.shop-anchors a,
+.shop-anchors .shop-anchor-filter {
   text-decoration: none;
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
@@ -5511,15 +5512,25 @@ body.modal-open {
   font-size: 0.82rem;
   font-weight: 600;
   transition: 0.2s ease;
+  font-family: inherit;
+  line-height: 1;
+  cursor: pointer;
 }
-.shop-anchors a:hover {
+.shop-anchors .shop-anchor-filter {
+  appearance: none;
+  -webkit-appearance: none;
+}
+.shop-anchors a:hover,
+.shop-anchors .shop-anchor-filter:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
   background: var(--color-accent-soft);
 }
 
 .shop-anchors a.is-active-filter,
-.shop-anchors a[aria-current="true"] {
+.shop-anchors a[aria-current="true"],
+.shop-anchors .shop-anchor-filter.is-active-filter,
+.shop-anchors .shop-anchor-filter[aria-current="true"] {
   border-color: var(--color-accent);
   background: var(--color-accent);
   color: #fff;
@@ -5534,10 +5545,16 @@ body.modal-open {
 }
 
 .collection-category-card {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  font: inherit;
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  border: 1px solid rgba(17, 24, 39, 0.12);
   background: #0b1220;
   text-decoration: none;
   color: #fff;

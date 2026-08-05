@@ -141,7 +141,7 @@
     });
   });
 
-  document.querySelectorAll(".shop-anchors a").forEach(function (link) {
+  document.querySelectorAll(".shop-anchors a, .shop-anchors .shop-anchor-filter").forEach(function (link) {
     link.addEventListener("click", function (event) {
       var selectedFilter = link.getAttribute("data-category-filter");
       if (selectedFilter) {
