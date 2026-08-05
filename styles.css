@@ -5518,6 +5518,14 @@ body.modal-open {
   background: var(--color-accent-soft);
 }
 
+.shop-anchors a.is-active-filter,
+.shop-anchors a[aria-current="true"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.24);
+}
+
 .catalog-section {
   padding: 2.5rem var(--section-pad-x) !important;
   background: var(--color-white);

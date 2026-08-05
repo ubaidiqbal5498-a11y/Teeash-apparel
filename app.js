@@ -35,6 +35,16 @@
     about: document.getElementById("page-about"),
     checkout: document.getElementById("page-checkout")
   };
+  var collectionProductSectionIds = [
+    "streetwear-collection",
+    "cat-tshirts",
+    "cat-trousers",
+    "cat-jeans",
+    "cat-tracksuits",
+    "bestsellers",
+    "new-arrivals"
+  ];
+  var currentCategoryFilter = "all";
 
   function closeMobileMenu() {
     if (!header || !toggle) return;
@@ -84,14 +94,41 @@
 
   window.TeeashShowPage = showPage;
 
+  function applyCategoryFilter(filterValue) {
+    var normalized = filterValue || "all";
+    if (normalized !== "all" && collectionProductSectionIds.indexOf(normalized) === -1) {
+      normalized = "all";
+    }
+    currentCategoryFilter = normalized;
+
+    collectionProductSectionIds.forEach(function (id) {
+      var section = document.getElementById(id);
+      if (!section) return;
+      section.hidden = normalized !== "all" && id !== normalized;
+    });
+
+    document.querySelectorAll("[data-category-filter]").forEach(function (link) {
+      var value = link.getAttribute("data-category-filter") || "all";
+      var isActive = value === normalized;
+      link.classList.toggle("is-active-filter", isActive);
+      if (isActive) link.setAttribute("aria-current", "true");
+      else link.removeAttribute("aria-current");
+    });
+  }
+
   document.querySelectorAll("[data-page]").forEach(function (link) {
     link.addEventListener("click", function (event) {
       var page = link.getAttribute("data-page");
       if (!page) return;
+      var selectedFilter = link.getAttribute("data-category-filter");
+      var keepScroll = link.getAttribute("data-keep-scroll") === "true" || !!selectedFilter;
       event.preventDefault();
-      showPage(page);
+      showPage(page, { keepScroll: keepScroll });
+      if (page === "collections") {
+        applyCategoryFilter(selectedFilter || "all");
+      }
       var targetId = link.getAttribute("data-scroll-target");
-      if (targetId) {
+      if (targetId && !selectedFilter) {
         window.setTimeout(function () {
           var el = document.getElementById(targetId);
           if (el) {
@@ -106,6 +143,12 @@
 
   document.querySelectorAll(".shop-anchors a").forEach(function (link) {
     link.addEventListener("click", function (event) {
+      var selectedFilter = link.getAttribute("data-category-filter");
+      if (selectedFilter) {
+        event.preventDefault();
+        applyCategoryFilter(selectedFilter);
+        return;
+      }
       var href = link.getAttribute("href") || "";
       if (href.charAt(0) !== "#") return;
       event.preventDefault();
@@ -864,4 +907,5 @@
   var initial = (location.hash || "#home").replace("#", "");
   if (!pages[initial]) initial = "home";
   showPage(initial, { keepScroll: true });
+  if (initial === "collections") applyCategoryFilter(currentCategoryFilter);
 })();
