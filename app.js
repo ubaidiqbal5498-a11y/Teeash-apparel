@@ -597,13 +597,14 @@
           "<div>" +
             "<h4>" + item.name + "</h4>" +
             '<p class="meta">Color: ' + colorLabel + " · Size: " + sizeLabel + "</p>" +
+            '<p class="cart-drawer-item-price">Price: ' + formatMoney(item.price) + "</p>" +
             '<div class="cart-drawer-item-row">' +
               '<div class="checkout-item-qty">' +
                 '<button type="button" class="cart-qty-btn" data-qty-minus="' + index + '" aria-label="Decrease">−</button>' +
                 "<span>" + item.quantity + "</span>" +
                 '<button type="button" class="cart-qty-btn" data-qty-plus="' + index + '" aria-label="Increase">+</button>' +
               "</div>" +
-              "<strong>" + formatMoney(lineTotal) + "</strong>" +
+              '<strong class="cart-drawer-item-subtotal">Subtotal: ' + formatMoney(lineTotal) + "</strong>" +
             "</div>" +
             '<button type="button" class="cart-item-remove" data-remove="' + index + '">Remove</button>' +
           "</div>";
